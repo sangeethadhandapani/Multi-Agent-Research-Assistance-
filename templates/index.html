@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multi-Agent Research Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Multi-Agent Research Assistant</h1>
+
+            <p>
+                Research topics using Search, Reader, Writer and Critic AI Agents.
+            </p>
+        </header>
+
+        <section class="search-box">
+
+            <label for="topic">Enter Research Topic</label>
+
+            <div class="input-row">
+
+                <input
+                    type="text"
+                    id="topic"
+                    placeholder="Example: Artificial Intelligence in Education"
+                >
+
+                <button id="researchButton" onclick="startResearch()">
+                    Research
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="agents">
+
+            <h2>AI Agents</h2>
+
+            <div class="agent-grid">
+
+                <div class="agent-card">
+                    <div class="icon">🔎</div>
+                    <h3>Search Agent</h3>
+                    <p>Finds relevant information from the web.</p>
+                </div>
+
+                <div class="agent-card">
+                    <div class="icon">📖</div>
+                    <h3>Reader Agent</h3>
+                    <p>Analyzes the collected sources.</p>
+                </div>
+
+                <div class="agent-card">
+                    <div class="icon">✍️</div>
+                    <h3>Writer Agent</h3>
+                    <p>Creates the research report.</p>
+                </div>
+
+                <div class="agent-card">
+                    <div class="icon">🔍</div>
+                    <h3>Critic Agent</h3>
+                    <p>Reviews the generated research.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>AI agents are researching your topic...</p>
+        </div>
+
+
+        <section id="resultSection" class="results hidden">
+
+            <h2>Research Report</h2>
+
+            <div class="report-card">
+
+                <h3 id="resultTopic"></h3>
+
+                <div id="report"></div>
+
+            </div>
+
+
+            <div class="critique-card">
+
+                <h2>Critic Review</h2>
+
+                <div id="critique"></div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                Powered by Ollama • Llama 3.2 • LangGraph • Python
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

@@ -48,8 +48,9 @@ def writer_node(state: ResearchState):
     print("\n✍️ Writer Agent is creating the research report...")
 
     report = write_research(
-        state["topic"]
-    )
+    state["topic"],
+    state["analysis"]
+)
 
     return {
         "report": report

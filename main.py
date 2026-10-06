@@ -1,15 +1,20 @@
-from agents.writer_agent import write_research
+from pipeline import research_pipeline
 
 
 def main():
     topic = input("Enter a research topic: ")
 
-    print("\nResearch Agent is working...\n")
+    print("\nStarting Multi-Agent Research Assistant...\n")
 
-    result = write_research(topic)
+    result = research_pipeline.invoke({
+        "topic": topic
+    })
 
-    print("===== RESEARCH RESULT =====\n")
-    print(result)
+    print("\n\n===== FINAL RESEARCH REPORT =====\n")
+    print(result["report"])
+
+    print("\n\n===== CRITIC REVIEW =====\n")
+    print(result["critique"])
 
 
 if __name__ == "__main__":
